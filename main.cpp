@@ -6,6 +6,8 @@ int main(int argc, char *argv[])
 #if defined(Q_OS_WIN)
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
+    //https://bugreports.qt.io/browse/QTBUG-51379
+    QGuiApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
 
     QGuiApplication app(argc, argv);
 
